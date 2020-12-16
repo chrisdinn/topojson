@@ -46,7 +46,9 @@ type TopologyOptions struct {
 	IDProperty string
 }
 
-func NewTopology(fc *geojson.FeatureCollection, opts *TopologyOptions) *Topology {
+// New builds a Topology from a GeoJSON FeatureCollection according to the 
+// provided TopologyOptions.
+func New(fc *geojson.FeatureCollection, opts *TopologyOptions) *Topology {
 	if opts == nil {
 		opts = &TopologyOptions{}
 	}
@@ -81,7 +83,7 @@ func NewTopology(fc *geojson.FeatureCollection, opts *TopologyOptions) *Topology
 	return topo
 }
 
-// MarshalJSON converts the topology object into the proper JSON.
+// MarshalJSON converts the Topology struct into the proper JSON.
 // It will handle the encoding of all the child geometries.
 // Alternately one can call json.Marshal(t) directly for the same result.
 func (t *Topology) MarshalJSON() ([]byte, error) {
@@ -95,9 +97,8 @@ func (t *Topology) MarshalJSON() ([]byte, error) {
 	return json.Marshal(*t)
 }
 
-// UnmarshalTopology decodes the data into a TopoJSON topology.
-// Alternately one can call json.Unmarshal(topo) directly for the same result.
-func UnmarshalTopology(data []byte) (*Topology, error) {
+// Unmarshal decodes a TopoJSON byte array into a Topology.
+func Unmarshal(data []byte) (*Topology, error) {
 	topo := &Topology{}
 	err := json.Unmarshal(data, topo)
 	if err != nil {

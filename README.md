@@ -26,12 +26,13 @@ import "github.com/rubenv/topojson"
 ## Usage
 
 ```go
-topology := topojson.NewTopology(fc, nil)
+topology := topojson.New(fc, nil)
 ```
 
 Optionally pass options as the second argument.
 
-This generates a Topology which can be encoded to JSON.
+This build a TopoJSON Topology struct from a GeoJSON FeatureCollection. The
+Topology struct can be encoded to TopoJSON.
 
 ## License
 

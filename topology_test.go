@@ -20,7 +20,7 @@ func TestTopology(t *testing.T) {
 	fc := geojson.NewFeatureCollection()
 	fc.AddFeature(poly)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 	is.NotNil(topo)
 	is.Equal(len(topo.Objects), 1)
 	is.Equal(len(topo.Arcs), 1)
@@ -36,13 +36,13 @@ func TestFull(t *testing.T) {
 	fc, err := geojson.UnmarshalFeatureCollection(in)
 	is.NoErr(err)
 
-	topo := NewTopology(fc, &TopologyOptions{
+	topo := New(fc, &TopologyOptions{
 		IDProperty:   "id",
 		PreQuantize:  1000000,
 		PostQuantize: 10000,
 	})
 
-	expected, err := UnmarshalTopology(out)
+	expected, err := Unmarshal(out)
 	is.NoErr(err)
 	is.Equal(topo, expected)
 }
@@ -62,7 +62,7 @@ func TestMultiFeatures(t *testing.T) {
 	})
 	fc.AddFeature(f2)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 
 	is.Equal(len(topo.Objects), len(fc.Features))
 }
@@ -77,7 +77,7 @@ func TestCopyBounds(t *testing.T) {
 	f.BoundingBox = []float64{0, 0, 2, 2}
 	fc.AddFeature(f)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 	is.NotNil(topo)
 
 	is.Equal(topo.Objects["one"].BoundingBox, []float64{0, 0, 2, 2})

@@ -14,7 +14,7 @@ func TestPointFeature(t *testing.T) {
 	f.SetProperty("id", "point")
 	fc.AddFeature(f)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 
 	is.Equal([]float64{0, 0}, topo.Objects["point"].Point)
 }
@@ -27,7 +27,7 @@ func TestMultiPointFeature(t *testing.T) {
 	f.SetProperty("id", "multipoint")
 	fc.AddFeature(f)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 
 	is.Equal([][]float64{{0, 0},{1, 1}}, topo.Objects["multipoint"].MultiPoint)
 }

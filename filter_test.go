@@ -21,7 +21,7 @@ func TestFilter(t *testing.T) {
 		{1, 1}, {2, 1}, {2, 2}, {1, 2}, {1, 1},
 	})))
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 	is.NotNil(topo)
 
 	al := len(topo.Arcs)

@@ -21,7 +21,7 @@ func TestGeoJSON(t *testing.T) {
 	fc := geojson.NewFeatureCollection()
 	fc.AddFeature(poly)
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 	is.NotNil(topo)
 	is.Equal(len(topo.Objects), 1)
 	is.Equal(len(topo.Arcs), 1)
@@ -42,7 +42,7 @@ func TestGeoJSONMultiArc(t *testing.T) {
 		{1, 0}, {2, 0}, {2, 1}, {1, 1}, {1, 0},
 	})))
 
-	topo := NewTopology(fc, nil)
+	topo := New(fc, nil)
 	is.NotNil(topo)
 	is.NotNil(topo)
 	is.Equal(len(topo.Objects), 2)
@@ -64,7 +64,7 @@ func TestGeoJSONMultiArc(t *testing.T) {
 func TestGeoJSONWithGeometryCollections(t *testing.T) {
 	is := is.New(t)
 
-	source, _ := UnmarshalTopology([]byte(sourceTopojson))
+	source, _ := Unmarshal([]byte(sourceTopojson))
 
 	expected, _ := geojson.UnmarshalFeatureCollection(([]byte(targetGeojson)))
 
