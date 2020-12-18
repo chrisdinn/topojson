@@ -1,7 +1,7 @@
 package topojson
 
 import (
-	geojson "github.com/paulmach/go.geojson"
+	geojson "github.com/chrisdinn/go.geojson"
 )
 
 // Filter topology into a new topology that only contains features with the given IDs

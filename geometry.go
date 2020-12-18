@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 )
 
 type Geometry struct {

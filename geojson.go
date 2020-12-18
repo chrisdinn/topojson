@@ -1,7 +1,7 @@
 package topojson
 
 import (
-	geojson "github.com/paulmach/go.geojson"
+	geojson "github.com/chrisdinn/go.geojson"
 )
 
 func (t *Topology) ToGeoJSON() *geojson.FeatureCollection {

@@ -3,7 +3,7 @@ package topojson
 import (
 	"fmt"
 
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 )
 
 func (t *Topology) extract() {

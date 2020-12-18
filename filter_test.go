@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/cheekybits/is"
-	geojson "github.com/paulmach/go.geojson"
+	geojson "github.com/chrisdinn/go.geojson"
 )
 
 func TestFilter(t *testing.T) {

@@ -2,7 +2,7 @@ package topojson
 
 import (
 	"testing"
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 	"github.com/cheekybits/is"
 )
 

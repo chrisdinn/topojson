@@ -1,6 +1,6 @@
 package topojson
 
-import geojson "github.com/paulmach/go.geojson"
+import geojson "github.com/chrisdinn/go.geojson"
 
 func (t *Topology) preQuantize() {
 	if t.opts.PreQuantize == 0 {

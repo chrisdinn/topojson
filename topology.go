@@ -3,7 +3,7 @@ package topojson
 import (
 	"encoding/json"
 
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 )
 
 type Topology struct {

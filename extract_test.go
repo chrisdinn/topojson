@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/cheekybits/is"
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 )
 
 // See https://github.com/mbostock/topojson/blob/master/test/topology/extract-test.js

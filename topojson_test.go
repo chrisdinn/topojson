@@ -3,7 +3,7 @@ package topojson
 import (
 	"fmt"
 
-	"github.com/paulmach/go.geojson"
+	"github.com/chrisdinn/go.geojson"
 )
 
 func NewTestFeature(id string, geom *geojson.Geometry) *geojson.Feature {
